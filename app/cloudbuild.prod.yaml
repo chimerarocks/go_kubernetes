@@ -1,8 +1,7 @@
 steps:
-    - id: "Go test"
-          name: "gcr.io/cloud-builders/go"
-          args: [ "test" ]
-          env: [ "GOPATH=." ]
+    -   id: "Rodando tests"
+        name: "gcr.io/cloud-builders/docker"
+        args: [ 'run','-it', '--rm', '-w="go/src/app/src"', '--entrypoint', 'go', 'go_greeting:local', 'test' ]
 
     -   id: "Building image from Dockerfile"
         name: 'gcr.io/cloud-builders/docker'
