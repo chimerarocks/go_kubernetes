@@ -18,7 +18,7 @@ steps:
         args:
             - '-c'
             - |
-                sed 's#img-app-deployment#gcr.io/$PROJECT_ID/app-laravel:$SHORT_SHA#g' k8s/app/deployment.yaml > k8s/app/deployment-new.yaml;
+                sed 's#img-app-deployment#gcr.io/$PROJECT_ID/go-greeting:$SHORT_SHA#g' k8s/app/deployment.yaml > k8s/app/deployment-new.yaml;
                 cat k8s/app/deployment-new.yaml;
 
     -   id: 'Deploying k8s'
@@ -29,4 +29,4 @@ steps:
             - 'k8s/app/deployment-new.yaml'
         env:
             - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
-            - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-docker-laravel'
+            - 'CLOUDSDK_CONTAINER_CLUSTER=my-first-cluster-1'
