@@ -1,4 +1,4 @@
 steps:
     - id: "Rodando tests"
       name: "gcr.io/cloud-builders/docker"
-      args: [ 'run','-it', '--rm', '-w="go/src/app/src"', '--entrypoint', 'go', 'go_greeting:local', 'test' ]
+      args: [ 'run', '--rm', '-w="go/src/app/src"', '--entrypoint', 'go', 'go_greeting:local', 'test' ]
